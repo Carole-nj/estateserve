@@ -30,6 +30,7 @@ $menus = [
     'delivery' => [
         ['href'=>'dashboard.php','icon'=>'bi-speedometer2', 'label'=>'Dashboard'],
         ['href'=>'orders.php',   'icon'=>'bi-box-seam',     'label'=>'All Orders'],
+        ['href'=>'earnings.php', 'icon'=>'bi-cash-stack',   'label'=>'Revenue'],
         ['href'=>'profile.php',  'icon'=>'bi-person',       'label'=>'Profile'],
     ],
 ];
