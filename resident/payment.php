@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 
 <div class="sidebar">
-  <span class="brand">🏠 EstateServe</span>
+  <span class="brand"><i class="bi bi-house-door-fill"></i> EstateServe</span>
   <nav class="nav flex-column">
     <a href="dashboard.php" class="nav-link"><i class="bi bi-speedometer2"></i> Dashboard</a>
     <a href="services.php"  class="nav-link"><i class="bi bi-grid"></i> Browse Services</a>
@@ -132,7 +132,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <!-- Payment Form -->
       <div class="card mpesa-card border-0 shadow-sm">
         <div class="mpesa-header">
-          <div class="fw-bold fs-5 mb-1">📱 Simulated M-Pesa Payment</div>
+          <div class="fw-bold fs-5 mb-1"><i class="bi bi-phone"></i> Simulated M-Pesa Payment</div>
           <div class="opacity-75 small">Enter your phone number to complete payment</div>
         </div>
         <div class="card-body p-4">
