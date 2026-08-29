@@ -76,7 +76,7 @@ $category_icons = [
 
 <!-- Sidebar -->
 <div class="sidebar">
-  <span class="brand">🏠 EstateServe</span>
+  <span class="brand"><i class="bi bi-house-door-fill"></i> EstateServe</span>
   <nav class="nav flex-column">
     <a href="dashboard.php"  class="nav-link active"><i class="bi bi-speedometer2"></i> Dashboard</a>
     <a href="services.php"   class="nav-link"><i class="bi bi-grid"></i> Browse Services</a>
@@ -93,7 +93,7 @@ $category_icons = [
 <div class="main">
   <div class="topbar">
     <div>
-      <h5 class="mb-0 fw-bold">Welcome back, <?= htmlspecialchars(explode(' ', $_SESSION['full_name'])[0]) ?>! 👋</h5>
+      <h5 class="mb-0 fw-bold">Welcome back, <?= htmlspecialchars(explode(' ', $_SESSION['full_name'])[0]) ?>!</h5>
       <small class="text-muted"><?= date('l, d F Y') ?></small>
     </div>
     <span class="text-muted"><i class="bi bi-person-circle me-1"></i><?= htmlspecialchars($_SESSION['full_name']) ?></span>
