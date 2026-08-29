@@ -36,7 +36,7 @@ $menus = [
 ?>
 <div class="sidebar">
   <div class="sidebar-header">
-    <a href="#" class="brand">🏠 <span>EstateServe</span></a>
+   <a href="#" class="brand">Estate<span>Serve</span></a>
   </div>
   <div class="sidebar-user">
     <div class="sidebar-avatar"><?= $initials ?></div>

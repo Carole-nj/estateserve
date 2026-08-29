@@ -77,7 +77,7 @@ if (isLoggedIn()) redirectByRole();
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg">
   <div class="container">
-    <a class="navbar-brand" href="index.php">🏠 EstateServe</a>
+    <a class="navbar-brand" href="index.php"> EstateServe</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
       <span class="navbar-toggler-icon"></span>
     </button>
