@@ -18,6 +18,10 @@ $stmt = $pdo->prepare("SELECT COUNT(*) FROM bookings WHERE provider_id = ?");
 $stmt->execute([$user_id]);
 $total = $stmt->fetchColumn();
 
+$stmt = $pdo->prepare("SELECT COALESCE(SUM(p.amount),0) FROM payments p JOIN bookings b ON p.booking_id = b.id WHERE b.provider_id = ? AND p.status = 'success'");
+$stmt->execute([$user_id]);
+$revenue = $stmt->fetchColumn();
+
 // Active deliveries
 $stmt = $pdo->prepare("
     SELECT b.*, s.name AS service, u.full_name AS resident, 
@@ -78,10 +82,11 @@ $notifs = $stmt->fetchAll();
 <body>
 
 <div class="sidebar">
-  <span class="brand">🏠 EstateServe</span>
+  <span class="brand"><i class="bi bi-house-door-fill"></i> EstateServe</span>
   <nav class="nav flex-column">
     <a href="dashboard.php" class="nav-link active"><i class="bi bi-speedometer2"></i> Dashboard</a>
     <a href="orders.php"    class="nav-link"><i class="bi bi-box-seam"></i> All Orders</a>
+    <a href="earnings.php"  class="nav-link"><i class="bi bi-cash-stack"></i> Revenue</a>
     <a href="profile.php"   class="nav-link"><i class="bi bi-person"></i> Profile</a>
     <hr style="border-color:#1e293b">
     <a href="../logout.php" class="nav-link text-danger"><i class="bi bi-box-arrow-left"></i> Logout</a>
@@ -104,7 +109,7 @@ $notifs = $stmt->fetchAll();
 
   <!-- Stats -->
   <div class="row g-3 mb-4">
-    <div class="col-md-4">
+    <div class="col-md-3">
       <div class="stat-card" style="background:linear-gradient(135deg,#00A550,#007a3d)">
         <div class="d-flex justify-content-between align-items-start">
           <div>
@@ -115,7 +120,7 @@ $notifs = $stmt->fetchAll();
         </div>
       </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
       <div class="stat-card" style="background:linear-gradient(135deg,#8b5cf6,#6d28d9)">
         <div class="d-flex justify-content-between align-items-start">
           <div>
@@ -126,7 +131,7 @@ $notifs = $stmt->fetchAll();
         </div>
       </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
       <div class="stat-card" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8)">
         <div class="d-flex justify-content-between align-items-start">
           <div>
@@ -136,6 +141,19 @@ $notifs = $stmt->fetchAll();
           <i class="bi bi-check-circle fs-2 opacity-50"></i>
         </div>
       </div>
+    </div>
+    <div class="col-md-3">
+      <a href="earnings.php" class="text-decoration-none">
+      <div class="stat-card" style="background:linear-gradient(135deg,#f59e0b,#d97706)">
+        <div class="d-flex justify-content-between align-items-start">
+          <div>
+            <div class="opacity-75 small mb-1">Revenue (KES)</div>
+            <div class="fs-2 fw-bold"><?= number_format($revenue, 0) ?></div>
+          </div>
+          <i class="bi bi-cash-stack fs-2 opacity-50"></i>
+        </div>
+      </div>
+      </a>
     </div>
   </div>
 
