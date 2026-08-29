@@ -98,7 +98,7 @@ if (isLoggedIn()) redirectByRole();
   <div class="container position-relative" style="z-index:1">
     <div class="row align-items-center">
       <div class="col-lg-6">
-        <div class="hero-badge">🇰🇪 Built for Kenyan Estates</div>
+        <div class="hero-badge">🇰 Built for Kenyan Estates</div>
         <h1 class="hero-title">All Your Estate Services, <span>One Platform</span></h1>
         <p class="hero-sub mt-3 mb-4">Book laundry, car washing, grocery shopping, house cleaning, plumbing, food delivery, and salon services — all from one place. Pay simulated M-Pesa. Track in real time.</p>
         <div class="d-flex gap-3 flex-wrap">

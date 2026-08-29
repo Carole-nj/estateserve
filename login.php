@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <div class="col-md-5">
         <div class="card p-4">
           <div class="text-center mb-4">
-            <div class="brand">🏠 EstateServe</div>
+            <div class="brand">EstateServe</div>
             <p class="text-muted mb-0">Sign in to your account</p>
           </div>
 
