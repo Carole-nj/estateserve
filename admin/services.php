@@ -79,7 +79,7 @@ $categories = ['laundry','car_washing','grocery','house_cleaning','plumbing','fo
 <body>
 
 <div class="sidebar">
-  <span class="brand">🏠 EstateServe</span>
+  <span class="brand"><i class="bi bi-house-door-fill"></i> EstateServe</span>
   <nav class="nav flex-column">
     <a href="dashboard.php" class="nav-link"><i class="bi bi-speedometer2"></i> Dashboard</a>
     <a href="users.php"     class="nav-link"><i class="bi bi-people"></i> Users</a>
