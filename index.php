@@ -42,6 +42,7 @@ if (isLoggedIn()) redirectByRole();
     .service-card { border: none; border-radius: 16px; padding: 1.75rem; transition: transform .2s, box-shadow .2s; cursor: default; height: 100%; }
     .service-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,.1); }
     .service-icon { width: 60px; height: 60px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.75rem; margin-bottom: 1rem; }
+    .service-icon .svc-ico { width: 32px; height: 32px; display: inline-block; -webkit-mask-position: center; mask-position: center; -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; }
     .service-card h5 { font-weight: 700; font-size: 1.05rem; color: #0f172a; }
     .service-card p  { color: #64748b; font-size: .9rem; margin: 0; }
 
@@ -55,6 +56,7 @@ if (isLoggedIn()) redirectByRole();
     .role-card { background: #1e293b; border: 1px solid #334155; border-radius: 16px; padding: 2rem; height: 100%; transition: border-color .2s; }
     .role-card:hover { border-color: #00A550; }
     .role-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .role-icon .role-ico { width: 40px; height: 40px; display: inline-block; background-color: currentColor; -webkit-mask-position: center; mask-position: center; -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; }
     .role-card h5 { color: #fff; font-weight: 700; }
     .role-card p  { color: #94a3b8; font-size: .9rem; }
     .role-card ul { color: #94a3b8; font-size: .875rem; padding-left: 1.2rem; }
@@ -98,7 +100,7 @@ if (isLoggedIn()) redirectByRole();
   <div class="container position-relative" style="z-index:1">
     <div class="row align-items-center">
       <div class="col-lg-6">
-        <div class="hero-badge">🇰 Built for Kenyan Estates</div>
+        <div class="hero-badge"><i class="bi bi-geo-alt-fill"></i> Built for Kenyan Estates</div>
         <h1 class="hero-title">All Your Estate Services, <span>One Platform</span></h1>
         <p class="hero-sub mt-3 mb-4">Book laundry, car washing, grocery shopping, house cleaning, plumbing, food delivery, and salon services — all from one place. Pay simulated M-Pesa. Track in real time.</p>
         <div class="d-flex gap-3 flex-wrap">
@@ -136,12 +138,12 @@ if (isLoggedIn()) redirectByRole();
             <div style="color:#00A550;font-weight:700;margin-top:.5rem">KES 1,250</div>
           </div>
           <div style="background:#1e293b; border:1px solid #00A550; border-radius:20px; padding:1.5rem; position:absolute; bottom:0; right:0; width:240px;">
-            <div style="color:#00A550;font-size:.8rem;font-weight:600;margin-bottom:.5rem">✓ PAYMENT SUCCESS</div>
+            <div style="color:#00A550;font-size:.8rem;font-weight:600;margin-bottom:.5rem"><i class="bi bi-check-circle-fill"></i> PAYMENT SUCCESS</div>
             <div style="color:#fff;font-weight:600;margin-bottom:.25rem">Transaction Code</div>
             <div style="color:#94a3b8;font-size:.85rem;font-family:monospace">ES4A2F9B1C</div>
           </div>
           <div style="background:#1e293b; border:1px solid #334155; border-radius:20px; padding:1.5rem; position:absolute; top:50%; left:50%; transform:translate(-20%,-50%); width:200px;">
-            <div style="font-size:1.5rem;margin-bottom:.5rem">🚗</div>
+            <div style="font-size:1.5rem;margin-bottom:.5rem"><i class="bi bi-car-front"></i></div>
             <div style="color:#fff;font-weight:600;font-size:.9rem">Car Wash</div>
             <div style="color:#94a3b8;font-size:.75rem">In Progress...</div>
             <div style="background:#334155;border-radius:4px;height:6px;margin-top:.75rem;overflow:hidden">
@@ -164,19 +166,21 @@ if (isLoggedIn()) redirectByRole();
     <div class="row g-4">
       <?php
       $services = [
-        ['icon'=>'🧺','bg'=>'#e8f5e9','color'=>'#00A550','name'=>'Laundry',        'desc'=>'Wash, dry and fold — collected and delivered to your door.'],
-        ['icon'=>'🚗','bg'=>'#e3f2fd','color'=>'#1565c0','name'=>'Car Washing',     'desc'=>'Full exterior and interior clean at your parking spot.'],
-        ['icon'=>'🛒','bg'=>'#fff8e1','color'=>'#f59e0b','name'=>'Grocery Shopping','desc'=>'We shop your list and deliver fresh to your unit.'],
-        ['icon'=>'🏠','bg'=>'#fce4ec','color'=>'#e8002d','name'=>'House Cleaning',  'desc'=>'Professional full clean for any size home.'],
-        ['icon'=>'🔧','bg'=>'#ede9fe','color'=>'#7c3aed','name'=>'Plumbing & Repairs','desc'=>'Leaks, fittings, electrical and general repairs.'],
-        ['icon'=>'🍱','bg'=>'#fff3e0','color'=>'#ea580c','name'=>'Food Delivery',   'desc'=>'Hot meals from restaurants delivered fast.'],
-        ['icon'=>'✂️','bg'=>'#f0fdf4','color'=>'#059669','name'=>'Salon & Barber',  'desc'=>'Professional haircuts and styling at your convenience.'],
+        ['icon'=>'laundry.svg',        'bg'=>'#e8f5e9','color'=>'#00A550','name'=>'Laundry',        'desc'=>'Wash, dry and fold — collected and delivered to your door.'],
+        ['icon'=>'car-wash.svg',       'bg'=>'#e3f2fd','color'=>'#1565c0','name'=>'Car Washing',     'desc'=>'Full exterior and interior clean at your parking spot.'],
+        ['icon'=>'grocery.svg',        'bg'=>'#fff8e1','color'=>'#f59e0b','name'=>'Grocery Shopping','desc'=>'We shop your list and deliver fresh to your unit.'],
+        ['icon'=>'house-cleaning.svg', 'bg'=>'#fce4ec','color'=>'#e8002d','name'=>'House Cleaning',  'desc'=>'Professional full clean for any size home.'],
+        ['icon'=>'plumbing.svg',       'bg'=>'#ede9fe','color'=>'#7c3aed','name'=>'Plumbing & Repairs','desc'=>'Leaks, fittings, electrical and general repairs.'],
+        ['icon'=>'food-delivery.svg',  'bg'=>'#fff3e0','color'=>'#ea580c','name'=>'Food Delivery',   'desc'=>'Hot meals from restaurants delivered fast.'],
+        ['icon'=>'salon.svg',          'bg'=>'#f0fdf4','color'=>'#059669','name'=>'Salon & Barber',  'desc'=>'Professional haircuts and styling at your convenience.'],
       ];
       foreach ($services as $s): ?>
       <div class="col-md-4 col-lg-3">
         <div class="service-card card shadow-sm">
           <div class="service-icon" style="background:<?= $s['bg'] ?>">
-            <span><?= $s['icon'] ?></span>
+            <span class="svc-ico" style="background-color:<?= $s['color'] ?>;
+                  -webkit-mask-image:url('assets/icons/<?= $s['icon'] ?>');
+                  mask-image:url('assets/icons/<?= $s['icon'] ?>');"></span>
           </div>
           <h5><?= $s['name'] ?></h5>
           <p><?= $s['desc'] ?></p>
@@ -230,15 +234,15 @@ if (isLoggedIn()) redirectByRole();
     <div class="row g-4">
       <?php
       $roles = [
-        ['icon'=>'👤','title'=>'Resident','color'=>'#00A550','items'=>['Browse & book services','Track booking status','Pay via simulated M-Pesa','Rate & review providers']],
-        ['icon'=>'🛠️','title'=>'Service Provider','color'=>'#3b82f6','items'=>['Manage incoming bookings','Update service status','View earnings dashboard','Build your reputation']],
-        ['icon'=>'🚚','title'=>'Delivery Personnel','color'=>'#8b5cf6','items'=>['View assigned deliveries','Update delivery status','Mark orders as delivered','Receive notifications']],
-        ['icon'=>'👑','title'=>'Estate Manager','color'=>'#f59e0b','items'=>['Manage all users & services','Oversee all bookings','View analytics & reports','Approve service providers']],
+        ['icon'=>'resident.svg', 'title'=>'Resident','color'=>'#00A550','items'=>['Browse & book services','Track booking status','Pay via simulated M-Pesa','Rate & review providers']],
+        ['icon'=>'provider.svg', 'title'=>'Service Provider','color'=>'#3b82f6','items'=>['Manage incoming bookings','Update service status','View earnings dashboard','Build your reputation']],
+        ['icon'=>'delivery.svg', 'title'=>'Delivery Personnel','color'=>'#8b5cf6','items'=>['View assigned deliveries','Update delivery status','Mark orders as delivered','Receive notifications']],
+        ['icon'=>'manager.svg',  'title'=>'Estate Manager','color'=>'#f59e0b','items'=>['Manage all users & services','Oversee all bookings','View analytics & reports','Approve service providers']],
       ];
       foreach ($roles as $r): ?>
       <div class="col-md-6 col-lg-3">
         <div class="role-card">
-          <div class="role-icon"><?= $r['icon'] ?></div>
+          <div class="role-icon" style="color:<?= $r['color'] ?>"><span class="role-ico" style="-webkit-mask-image:url('assets/icons/<?= $r['icon'] ?>'); mask-image:url('assets/icons/<?= $r['icon'] ?>');"></span></div>
           <h5><?= $r['title'] ?></h5>
           <ul class="mt-2">
             <?php foreach ($r['items'] as $item): ?>
