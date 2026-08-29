@@ -49,7 +49,7 @@ $pending_count = $pdo->query("SELECT COUNT(*) FROM payments WHERE status = 'pend
 <body>
 
 <div class="sidebar">
-  <span class="brand">🏠 EstateServe</span>
+  <span class="brand"><i class="bi bi-house-door-fill"></i> EstateServe</span>
   <nav class="nav flex-column">
     <a href="dashboard.php" class="nav-link"><i class="bi bi-speedometer2"></i> Dashboard</a>
     <a href="users.php"     class="nav-link"><i class="bi bi-people"></i> Users</a>
