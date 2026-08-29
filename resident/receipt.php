@@ -182,7 +182,7 @@ if (!$data || !$data['transaction_code']) {
 
     <!-- Header -->
     <div class="receipt-header">
-      <div class="receipt-brand">🏠 EstateServe</div>
+      <div class="receipt-brand"><i class="bi bi-house-door-fill"></i> EstateServe</div>
       <div class="receipt-tagline">Estate Services Management System · JKUAT Karen Campus</div>
       <div class="receipt-badge">
         <i class="bi bi-check-circle-fill"></i>
