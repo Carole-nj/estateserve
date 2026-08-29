@@ -100,7 +100,7 @@ $nav_links = [
 <body>
 
 <div class="sidebar">
-  <span class="brand">🏠 EstateServe</span>
+  <span class="brand"><i class="bi bi-house-door-fill"></i> EstateServe</span>
   <nav class="nav flex-column">
     <?php foreach ($nav_links[$role] ?? [] as $link): ?>
     <a href="<?= $link['href'] ?>"
